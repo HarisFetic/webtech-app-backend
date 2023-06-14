@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.List;
 
 @RestController
@@ -32,4 +33,17 @@ public class KraftuebungController {
         return service.getAll();
     }
 
+    @DeleteMapping("/kraftuebungen/{id}")
+    public void deleteKraftuebung(@PathVariable String id) {
+        logger.info("DELETE request on route kraftuebungen with {}", id);
+        Long kraftuebungId = Long.parseLong(id);
+        service.delete(kraftuebungId);
+    }
+
+    @PutMapping("/kraftuebungen/{id}")
+    public Kraftuebung updateKraftuebung(@PathVariable String id, @RequestBody Kraftuebung updatedKraftuebung) {
+        logger.info("PUT request on route kraftuebungen with {}", id);
+        Long kraftuebungId = Long.parseLong(id);
+        return service.update(kraftuebungId, updatedKraftuebung);
+    }
 }
