@@ -4,30 +4,19 @@ package htwberlin.backend;
 import jakarta.persistence.*;
 
 @Entity
-public class Kraftuebung {
+public class Ausdaueruebung {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private int repeat;
 
-    private String weight;
-    
 
-    public Kraftuebung() {}
+    public Ausdaueruebung() {}
 
-    public Kraftuebung(String name, int repeat, String weight) {
+    public Ausdaueruebung(String name, int repeat) {
         this.name = name;
         this.repeat = repeat;
-        this.weight = weight;
-    }
-
-    public String getWeight() {
-        return weight;
-    }
-
-    public void setWeight(String weight) {
-        this.weight = weight;
     }
 
     public Long getId() {
@@ -57,13 +46,13 @@ public class Kraftuebung {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Kraftuebung)) return false;
+        if (!(o instanceof Ausdaueruebung)) return false;
 
-        Kraftuebung kraftuebung = (Kraftuebung) o;
+        Ausdaueruebung ausdaueruebung = (Ausdaueruebung) o;
 
-        if (getRepeat() != kraftuebung.getRepeat()) return false;
-        if (getId() != null ? !getId().equals(kraftuebung.getId()) : kraftuebung.getId() != null) return false;
-        return getName() != null ? getName().equals(kraftuebung.getName()) : kraftuebung.getName() == null;
+        if (getRepeat() != ausdaueruebung.getRepeat()) return false;
+        if (getId() != null ? !getId().equals(ausdaueruebung.getId()) : ausdaueruebung.getId() != null) return false;
+        return getName() != null ? getName().equals(ausdaueruebung.getName()) : ausdaueruebung.getName() == null;
     }
 
     @Override
@@ -76,11 +65,10 @@ public class Kraftuebung {
 
     @Override
     public String toString() {
-        return "Kraftuebung{" +
+        return "Ausdaueruebung{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", repeat=" + repeat + '\'' +
-                ", weight=" + weight +
+                ", repeat=" + repeat +
                 '}';
     }
 }

@@ -37,6 +37,7 @@ public class KraftuebungService {
         Kraftuebung existingKraftuebung = repo.findById(id).orElseThrow(() -> new RuntimeException());
         existingKraftuebung.setName(updatedKraftuebung.getName());
         existingKraftuebung.setRepeat(updatedKraftuebung.getRepeat());
+        existingKraftuebung.setWeight(updatedKraftuebung.getWeight());
         // Weitere Eigenschaften der Kraftuebung aktualisieren, falls vorhanden
 
         return repo.save(existingKraftuebung);
