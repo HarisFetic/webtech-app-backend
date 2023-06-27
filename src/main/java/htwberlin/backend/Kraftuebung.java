@@ -10,13 +10,24 @@ public class Kraftuebung {
     private Long id;
     private String name;
     private int repeat;
+
+    private String weight;
     
 
     public Kraftuebung() {}
 
-    public Kraftuebung(String name, int repeat) {
+    public Kraftuebung(String name, int repeat, String weight) {
         this.name = name;
         this.repeat = repeat;
+        this.weight = weight;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
     }
 
     public Long getId() {
@@ -68,7 +79,8 @@ public class Kraftuebung {
         return "Kraftuebung{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", repeat=" + repeat +
+                ", repeat=" + repeat + '\'' +
+                ", weight=" + weight +
                 '}';
     }
 }
