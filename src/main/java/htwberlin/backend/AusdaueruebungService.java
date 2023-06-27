@@ -36,7 +36,7 @@ public class AusdaueruebungService {
     public Ausdaueruebung update(Long id, Ausdaueruebung updatedAusdaueruebung) {
         Ausdaueruebung existingAusdaueruebung = repo.findById(id).orElseThrow(() -> new RuntimeException());
         existingAusdaueruebung.setName(updatedAusdaueruebung.getName());
-        existingAusdaueruebung.setRepeat(updatedAusdaueruebung.getRepeat());
+        existingAusdaueruebung.setTime(updatedAusdaueruebung.getTime());
         // Weitere Eigenschaften der Ausdaueruebungen aktualisieren, falls vorhanden
 
         return repo.save(existingAusdaueruebung);

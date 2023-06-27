@@ -9,14 +9,14 @@ public class Ausdaueruebung {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private int repeat;
+    private int time;
 
 
     public Ausdaueruebung() {}
 
-    public Ausdaueruebung(String name, int repeat) {
+    public Ausdaueruebung(String name, int time) {
         this.name = name;
-        this.repeat = repeat;
+        this.time = time;
     }
 
     public Long getId() {
@@ -35,12 +35,12 @@ public class Ausdaueruebung {
         this.name = name;
     }
 
-    public int getRepeat() {
-        return repeat;
+    public int getTime() {
+        return time;
     }
 
-    public void setRepeat(int repeat) {
-        this.repeat = repeat;
+    public void setTime(int time) {
+        this.time = time;
     }
 
     @Override
@@ -50,7 +50,7 @@ public class Ausdaueruebung {
 
         Ausdaueruebung ausdaueruebung = (Ausdaueruebung) o;
 
-        if (getRepeat() != ausdaueruebung.getRepeat()) return false;
+        if (getTime() != ausdaueruebung.getTime()) return false;
         if (getId() != null ? !getId().equals(ausdaueruebung.getId()) : ausdaueruebung.getId() != null) return false;
         return getName() != null ? getName().equals(ausdaueruebung.getName()) : ausdaueruebung.getName() == null;
     }
@@ -59,7 +59,7 @@ public class Ausdaueruebung {
     public int hashCode() {
         int result = getId() != null ? getId().hashCode() : 0;
         result = 31 * result + (getName() != null ? getName().hashCode() : 0);
-        result = 31 * result + getRepeat();
+        result = 31 * result + getTime();
         return result;
     }
 
@@ -68,7 +68,7 @@ public class Ausdaueruebung {
         return "Ausdaueruebung{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", repeat=" + repeat +
+                ", time=" + time +
                 '}';
     }
 }
