@@ -38,6 +38,7 @@ public class KraftuebungService {
         existingKraftuebung.setName(updatedKraftuebung.getName());
         existingKraftuebung.setRepeat(updatedKraftuebung.getRepeat());
         existingKraftuebung.setWeight(updatedKraftuebung.getWeight());
+        existingKraftuebung.setConfirm(updatedKraftuebung.isConfirm());
         // Weitere Eigenschaften der Kraftuebung aktualisieren, falls vorhanden
 
         return repo.save(existingKraftuebung);

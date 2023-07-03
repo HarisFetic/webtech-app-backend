@@ -10,13 +10,22 @@ public class Ausdaueruebung {
     private Long id;
     private String name;
     private int time;
+    private boolean confirm = false;
 
+    public boolean isConfirm() {
+        return confirm;
+    }
+
+    public void setConfirm(boolean confirm) {
+        this.confirm = confirm;
+    }
 
     public Ausdaueruebung() {}
 
-    public Ausdaueruebung(String name, int time) {
+    public Ausdaueruebung(String name, int time, boolean confirm) {
         this.name = name;
         this.time = time;
+        this.confirm = confirm;
     }
 
     public Long getId() {
@@ -68,7 +77,8 @@ public class Ausdaueruebung {
         return "Ausdaueruebung{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", time=" + time +
+                ", time=" + time + '\'' +
+                ", confirm='" + confirm +
                 '}';
     }
 }

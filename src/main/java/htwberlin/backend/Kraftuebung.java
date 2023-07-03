@@ -12,14 +12,25 @@ public class Kraftuebung {
     private int repeat;
 
     private String weight;
-    
+
+    private boolean confirm = false;
+
+
+    public boolean isConfirm() {
+        return confirm;
+    }
+
+    public void setConfirm(boolean confirm) {
+        this.confirm = confirm;
+    }
 
     public Kraftuebung() {}
 
-    public Kraftuebung(String name, int repeat, String weight) {
+    public Kraftuebung(String name, int repeat, String weight, boolean confirm) {
         this.name = name;
         this.repeat = repeat;
         this.weight = weight;
+        this.confirm = confirm;
     }
 
     public String getWeight() {
@@ -80,7 +91,8 @@ public class Kraftuebung {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", repeat=" + repeat + '\'' +
-                ", weight=" + weight +
+                ", weight=" + weight + '\'' +
+                ", confirm=" + confirm +
                 '}';
     }
 }
